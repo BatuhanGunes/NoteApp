@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="operation_not_supported">Bu işlem şu anda desteklenmiyor</string>
+
+    <string name="empty_error_title">HATA: Başlık alanı boş olamaz</string>
+    <string name="empty_error_desc">HATA: Açıklama alanı boş olamaz</string>
+    <string name="empty_error_url">HATA: URL alanı boş bırakılamaz</string>
+    <string name="wrong_url_error">HATA: URL https:// ile başlamalıdır</string>
+    <string name="load_error_photo">HATA: Fotoğraf yüklenirken hata oluştu</string>
+    <string name="empty_list_message">Not bulunamadı\n\nLütfen yeni not ekleyin</string>
+
+    <string name="clear_photo">Fotografı Temizle</string>
+    <string name="take_photo">Fotograf Çek</string>
+    <string name="select_photo">Fotograf Seç</string>
+    <string name="search_photo">Fotograf Ara</string>
+    <string name="search_photo_dialog_hint">Lütfen URL\'yi girin</string>
+    <string name="search_photo_dialog_confirm">ARA</string>
+    <string name="search_photo_dialog_cancel">VAZGEÇ</string>
+    <string name="clear_photo_success">Fotograf temizlendi</string>
+    <string name="clear_photo_undo">GERİ AL</string>
+
+    <string name="back">Geri</string>
+    <string name="title">Başlık</string>
+    <string name="desc">Açıklama</string>
+    <string name="save_note">KAYDET</string>
+    <string name="created_on">Oluşturuldu: %1$s</string>
+    <string name="edited_on">Son değişiklik: %1$s</string>
+
+    <string name="delete_note_dialog_title">Notu Sil</string>
+    <string name="delete_note_dialog_message">Notu silmek istediğinizden emin misiniz?</string>
+    <string name="delete_note_dialog_confirm">ONAYLA</string>
+    <string name="delete_note_dialog_cancel">VAZGEÇ</string>
+    <string name="delete_note_success">Not silindi</string>
+    <string name="delete_note_undo">GERİ AL</string>
+</resources>

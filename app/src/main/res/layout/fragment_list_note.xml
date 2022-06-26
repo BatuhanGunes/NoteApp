@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feature_note.presentation.list_note.ListNoteFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewEmptyList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingBottom="@dimen/text_view_empty_list_padding_bottom"
+        android:text="@string/empty_list_message"
+        android:textAppearance="?attr/textAppearanceHeadline5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNote"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:layoutAnimation="@anim/layout_animation"
+        android:padding="@dimen/note_list_recycler_view_padding"
+        android:transitionGroup="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/card_view_note_item" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/noteListBottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_app_bar_height"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/white"
+        android:fitsSystemWindows="true"
+        app:fabAlignmentMode="end"
+        app:fabCradleMargin="@dimen/add_edit_note_fab_cradle_margin"
+        app:fabCradleRoundedCornerRadius="@dimen/add_edit_note_fab_cradle_corner_radius"
+        app:hideOnScroll="true">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/appTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/note_list_toolbar_textview_margin"
+            android:text="@string/app_name"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/note_list_toolbar_textview_text_size"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNoteFab"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add_note_fab_desc"
+        android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="@android:color/black"
+        app:fabSize="normal"
+        app:layout_anchor="@id/noteListBottomAppBar"
+        app:maxImageSize="@dimen/add_edit_note_fab_max_image_size"
+        app:tint="@android:color/white"
+        app:useCompatPadding="false" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

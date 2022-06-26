@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ListNoteFragment">
+
+    <fragment
+        android:id="@+id/ListNoteFragment"
+        android:name="com.task.noteapp.feature_note.presentation.list_note.ListNoteFragment"
+        android:label="fragment_list_note"
+        tools:layout="@layout/fragment_list_note">
+        <action
+            android:id="@+id/action_listNoteFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment"
+            app:enterAnim="@anim/slide_right_in"
+            app:exitAnim="@anim/slide_left_out"
+            app:popEnterAnim="@anim/slide_left_in"
+            app:popExitAnim="@anim/slide_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditNoteFragment"
+        android:name="com.task.noteapp.feature_note.presentation.add_edit_note.AddEditNoteFragment"
+        android:label="fragment_add_edit_note"
+        tools:layout="@layout/fragment_add_edit_note">
+        <argument
+            android:name="Note"
+            android:defaultValue="@null"
+            app:argType="com.task.noteapp.feature_note.domain.model.Note"
+            app:nullable="true" />
+    </fragment>
+</navigation>

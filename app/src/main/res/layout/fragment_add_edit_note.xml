@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addEditNoteFragmentParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".feature_note.presentation.add_edit_note.AddEditNoteFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbarFragmentNoteDesc"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/add_edit_note_custom_toolbar_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/add_edit_note_custom_toolbar_back_margin_start"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/back"
+                android:focusable="true"
+                android:padding="@dimen/add_edit_note_custom_toolbar_back_padding"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/lastEdited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_date_border"
+                android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+                android:drawablePadding="@dimen/add_edit_note_custom_toolbar_date_drawable_padding"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/add_edit_note_custom_toolbar_date_padding_horizontal"
+                android:paddingVertical="@dimen/add_edit_note_custom_toolbar_date_padding_vertical"
+                android:text="@string/created_on"
+                android:textSize="@dimen/add_edit_note_custom_toolbar_date_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/editBtn"
+                app:layout_constraintStart_toEndOf="@+id/backBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/editBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/add_edit_note_custom_toolbar_back_margin_start"
+                android:layout_marginStart="@dimen/add_edit_note_custom_toolbar_back_margin_start"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/back"
+                android:focusable="true"
+                android:padding="@dimen/add_edit_note_custom_toolbar_back_padding"
+                android:src="@drawable/ic_baseline_lock_open_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <ImageView
+                android:id="@+id/deleteBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/add_edit_note_custom_toolbar_back_margin_start"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/back"
+                android:focusable="true"
+                android:padding="@dimen/add_edit_note_custom_toolbar_back_padding"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/add_edit_note_scroll_margin"
+                android:fillViewport="true">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="1dp"
+                    android:background="?attr/selectableItemBackground"
+                    app:cardCornerRadius="@dimen/note_card_view_corner_radius">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/noteImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/note_image_desc"
+                            android:scaleType="fitCenter"
+                            android:visibility="gone" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/add_edit_note_title_margin_horizontal"
+                            android:layout_marginVertical="@dimen/add_edit_note_title_margin_vertical"
+                            android:background="@null"
+                            android:focusableInTouchMode="true"
+                            android:hint="@string/title"
+                            app:boxBackgroundColor="@color/white">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:importantForAutofill="no"
+                                android:inputType="none"
+                                android:maxLines="1"
+                                android:textSize="@dimen/add_edit_note_title_text_size"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="@dimen/add_edit_note_desc_margin_horizontal"
+                            android:layout_marginVertical="@dimen/add_edit_note_desc_margin_vertical"
+                            android:focusableInTouchMode="true"
+                            android:gravity="top|start"
+                            android:hint="@string/desc"
+                            app:boxBackgroundColor="@color/white">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etNoteDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="top|start"
+                                android:importantForAutofill="no"
+                                android:inputType="none"
+                                android:textSize="@dimen/add_edit_note_desc_text_size" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/noteEditAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_app_bar_height"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/white"
+        android:fitsSystemWindows="true"
+        app:fabAlignmentMode="end"
+        app:fabCradleMargin="@dimen/add_edit_note_fab_cradle_margin"
+        app:fabCradleRoundedCornerRadius="@dimen/add_edit_note_fab_cradle_corner_radius"
+        app:menu="@menu/note_edit_menu" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveNoteFab"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/add_note_fab_desc"
+        android:src="@drawable/ic_baseline_check_24"
+        app:backgroundTint="@android:color/black"
+        app:fabSize="normal"
+        app:layout_anchor="@id/noteEditAppBar"
+        app:maxImageSize="@dimen/add_edit_note_fab_max_image_size"
+        app:tint="@android:color/white"
+        app:useCompatPadding="false" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

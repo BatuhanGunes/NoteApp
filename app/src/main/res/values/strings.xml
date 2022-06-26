@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name" translatable="false">NoteApp</string>
+
+    <string name="note_image_desc" translatable="false">Note description image</string>
+    <string name="add_note_fab_desc" translatable="false">Add note fab description</string>
+
+    <string name="operation_not_supported">This operation is currently not supported</string>
+
+    <string name="empty_error_title">ERROR: Title field cannot be empty</string>
+    <string name="empty_error_desc">ERROR: Description field cannot be empty</string>
+    <string name="empty_error_url">ERROR: URL field cannot be empty</string>
+    <string name="wrong_url_error">ERROR: URL must start with https://</string>
+    <string name="load_error_photo">ERROR: An error occurred while loading the photo</string>
+    <string name="empty_list_message">Note not found\n\nPlease add new note</string>
+
+    <string name="clear_photo">Clear Photo</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="select_photo">Select Photo</string>
+    <string name="search_photo">Search Photo</string>
+    <string name="search_photo_dialog_hint">Please enter URL</string>
+    <string name="search_photo_dialog_confirm">SEARCH</string>
+    <string name="search_photo_dialog_cancel">CANCEL</string>
+    <string name="clear_photo_success">Photo cleared</string>
+    <string name="clear_photo_undo">UNDO</string>
+
+    <string name="back">Back</string>
+    <string name="title">Title</string>
+    <string name="desc">Description</string>
+    <string name="save_note">SAVE</string>
+    <string name="created_on">Created on: %1$s</string>
+    <string name="edited_on">Edited on: %1$s</string>
+
+    <string name="delete_note_dialog_title">Delete Note</string>
+    <string name="delete_note_dialog_message">Are you sure want to delete note?</string>
+    <string name="delete_note_dialog_confirm">CONFIRM</string>
+    <string name="delete_note_dialog_cancel">CANCEL</string>
+    <string name="delete_note_success">Note deleted</string>
+    <string name="delete_note_undo">UNDO</string>
+</resources>

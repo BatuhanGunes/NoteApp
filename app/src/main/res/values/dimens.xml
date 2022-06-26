@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="note_list_toolbar_textview_text_size">25sp</dimen>
+    <dimen name="note_list_toolbar_textview_margin">10dp</dimen>
+    <dimen name="note_list_recycler_view_padding">5dp</dimen>
+    <dimen name="note_list_fab_layout_margin">15dp</dimen>
+    <dimen name="note_list_recycle_bottom_margin">60dp</dimen>
+
+    <dimen name="note_card_view_margin">5dp</dimen>
+    <dimen name="note_card_view_corner_radius">13dp</dimen>
+    <dimen name="note_card_view_elevation">5dp</dimen>
+    <dimen name="note_card_view_layout_margin">1dp</dimen>
+    <dimen name="note_card_view_image_margin">5dp</dimen>
+    <dimen name="note_card_view_title_margin">5dp</dimen>
+    <dimen name="note_card_view_title_padding_horizontal">12dp</dimen>
+    <dimen name="note_card_view_title_text_size">20sp</dimen>
+    <dimen name="note_card_view_desc_margin">5dp</dimen>
+    <dimen name="note_card_view_desc_padding_horizontal">12dp</dimen>
+    <dimen name="note_card_view_desc_text_size">14sp</dimen>
+    <dimen name="note_card_view_date_margin">5dp</dimen>
+    <dimen name="note_card_view_date_drawable_padding">5dp</dimen>
+    <dimen name="note_card_view_date_padding_horizontal">10dp</dimen>
+    <dimen name="note_card_view_date_padding_vertical">5dp</dimen>
+    <dimen name="note_card_view_date_text_size">12sp</dimen>
+
+    <dimen name="add_edit_note_custom_toolbar_height">50dp</dimen>
+    <dimen name="add_edit_note_custom_toolbar_back_margin_start">15dp</dimen>
+    <dimen name="add_edit_note_custom_toolbar_back_padding">5dp</dimen>
+    <dimen name="add_edit_note_custom_toolbar_date_drawable_padding">5dp</dimen>
+    <dimen name="add_edit_note_custom_toolbar_date_padding_horizontal">13dp</dimen>
+    <dimen name="add_edit_note_custom_toolbar_date_padding_vertical">5dp</dimen>
+    <dimen name="add_edit_note_custom_toolbar_date_text_size">12sp</dimen>
+    <dimen name="add_edit_note_scroll_margin">10dp</dimen>
+    <dimen name="add_edit_note_image_margin_horizontal">20dp</dimen>
+    <dimen name="add_edit_note_title_margin_horizontal">5dp</dimen>
+    <dimen name="add_edit_note_title_margin_vertical">5dp</dimen>
+    <dimen name="add_edit_note_title_text_size">22sp</dimen>
+    <dimen name="add_edit_note_desc_margin_horizontal">5dp</dimen>
+    <dimen name="add_edit_note_desc_margin_vertical">5dp</dimen>
+    <dimen name="add_edit_note_desc_text_size">16sp</dimen>
+    <dimen name="add_edit_note_fab_layout_margin">15dp</dimen>
+    <dimen name="add_edit_note_fab_text_padding_start">0dp</dimen>
+    <dimen name="add_edit_note_fab_text_padding_end">20dp</dimen>
+    <dimen name="add_edit_note_fab_cradle_margin">10dp</dimen>
+    <dimen name="add_edit_note_fab_cradle_corner_radius">30dp</dimen>
+    <dimen name="add_edit_note_fab_max_image_size">30dp</dimen>
+
+    <dimen name="bottom_app_bar_height">50dp</dimen>
+    <dimen name="text_view_empty_list_padding_bottom">100dp</dimen>
+</resources>

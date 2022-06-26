@@ -1,0 +1,86 @@
+#!/bin/sh
+#
+# Define and parse variables 
+#
+
+resetVersionNumber () {
+	CMD_RESET=`sed -i 's/\bdef '"$1"' = [0-9]\{1,\}\b/def '"$1"' = 0/g' $buildFile`
+	$CMD_RESET > /dev/null
+}
+
+buildFile=app/build.gradle
+majorVer=`grep -Eo 'def versionMajor = [0-9]{1,}' $buildFile | grep -Eo '[0-9]{1,}'`
+minorVer=`grep -Eo 'def versionMinor = [0-9]{1,}' $buildFile | grep -Eo '[0-9]{1,}'`
+patchVer=`grep -Eo 'def versionPatch = [0-9]{1,}' $buildFile | grep -Eo '[0-9]{1,}'`
+
+if [ -f /dev/tty ]
+then
+	# Allows us to read user input below, assigns stdin to keyboard
+	exec < /dev/tty
+	read -p 'versionType (major/minor/patch): ' versionType
+	# Close stdin
+	exec <&-
+else
+	versionType=$(.githooks/version-input "Please enter 'major','minor' or 'patch'")
+	if [ "$versionType" = "cancel" ] 
+	then
+		echo "error : operation canceled"
+		echo "Need commit scope for auto version upgrading"
+		echo "use --no-verify skip this process"
+		exit 1
+	fi
+fi
+
+
+echo "app version $majorVer.$minorVer.$patchVer upgrading $versionType"
+# Evaluate input
+if [ "$versionType" = "major" ]
+then
+	selectedType="versionMajor"
+	selectedVer=$majorVer
+elif [ "$versionType" = "minor" ]
+then
+	selectedType="versionMinor"
+	selectedVer=$minorVer
+elif [ "$versionType" = "patch" ]
+then
+	selectedType="versionPatch"
+	selectedVer=$patchVer
+elif [ "$versionType" = "ignore" ]
+then
+	exit 0
+else
+	echo "invalid input, expected major/minor/patch"
+	exit 1
+fi
+
+
+incVers=$(($selectedVer + 1))
+
+# Replace version number with increased version number
+CMD_INCREMENT=`sed -i 's/\bdef '"$selectedType"' = [0-9]\{1,\}\b/def '"$selectedType"' = '"$incVers"'/g' $buildFile`
+$CMD_INCREMENT > /dev/null
+
+echo "$selectedType version increased from $selectedVer to $incVers"
+
+if [ "$selectedType" = "versionMinor" ]
+then
+	resetVersionNumber "versionPatch"
+fi
+
+if [ "$selectedType" = "versionMajor" ]
+then
+	resetVersionNumber "versionMinor"
+	resetVersionNumber "versionPatch"
+fi
+	
+
+# Add file to stage
+git add $buildFile
+
+# Print complete message
+cat <<\EOF
+Version succesfully increased
+EOF
+
+exit 0

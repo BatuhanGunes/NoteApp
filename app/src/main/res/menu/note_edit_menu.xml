@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="AlwaysShowAction">
+
+    <item
+        android:id="@+id/clearPicture"
+        android:icon="@drawable/ic_baseline_no_photography_24"
+        android:title="@string/clear_photo"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/searchPicture"
+        android:icon="@drawable/ic_baseline_image_search_24"
+        android:title="@string/search_photo"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/takePicture"
+        android:icon="@drawable/ic_baseline_add_a_photo_24"
+        android:title="@string/take_photo"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/selectPicture"
+        android:icon="@drawable/ic_baseline_add_photo_alternate_24"
+        android:title="@string/select_photo"
+        app:showAsAction="always" />
+
+</menu>
